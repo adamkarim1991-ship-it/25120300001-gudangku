@@ -3,15 +3,21 @@
 @section('content')
 <div class="flex justify-between items-center mb-4">
     <h2 class="text-2xl font-bold text-gray-800">Riwayat Transaksi</h2>
-    <a href="{{ route('transactions.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow">+ Catat Transaksi</a>
+    
+    <!-- Bagian Tombol -->
+    <div>
+        <a href="{{ route('transactions.pdf') }}" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded shadow mr-2">Export PDF</a>
+        <a href="{{ route('transactions.create') }}" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow">+ Catat Transaksi</a>
+    </div>
 </div>
+
 <div class="overflow-x-auto">
     <table class="w-full text-left border-collapse">
         <thead class="bg-gray-200 text-gray-700">
             <tr>
                 <th class="py-3 px-4 border-b">No</th>
                 <th class="py-3 px-4 border-b">Tanggal</th>
-                <th class="py-3 px-4 border-b">Nama Produk</th>
+                <th class="py-3 px-4 border-b">Produk</th>
                 <th class="py-3 px-4 border-b">Tipe</th>
                 <th class="py-3 px-4 border-b">Jumlah</th>
             </tr>

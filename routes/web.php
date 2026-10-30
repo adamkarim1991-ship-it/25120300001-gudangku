@@ -16,5 +16,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
+    Route::get('/transactions/export-pdf', [TransactionController::class, 'exportPdf'])->name('transactions.pdf');
+    Route::get('/stock-logs', [TransactionController::class, 'stockLogs'])->name('stock.logs');
     Route::resource('transactions', TransactionController::class);
 });
